@@ -24,6 +24,7 @@ public class ScalesSolution
 			scasol = RandomBinaryString(n);
 		}
 	}
+	
 	private static String RandomBinaryString(int n)
 	{
 		String s = new String();
@@ -36,10 +37,12 @@ public class ScalesSolution
 		
 		return(s);
 	}
+	
 	public ScalesSolution(int n) 
 	{
 		scasol = RandomBinaryString(n);	
 	}
+	
 	//This is the fitness function for the Scales problem
 	//This function returns -1 if the number of weights is less than
 	//the size of the current solution
@@ -50,7 +53,7 @@ public class ScalesSolution
 		int n = scasol.length();
 		for(int i=0;i<n;i++)
 		{
-			if(scasol.charAt(i)==0)
+			if(scasol.charAt(i)=='0')
 			{
 				lhs+=weights.get(i);
 			}
@@ -59,35 +62,40 @@ public class ScalesSolution
 				rhs+=weights.get(i);
 			}
 		}
-		//Code goes here
-		//Check each element of scasol for a 0 (lhs) and 1 (rhs) add the weight wi
-		//to variables lhs and rhs as appropriate
-		
 		return(Math.abs(lhs-rhs));
 	}
+	
 	//Display the string without a new line
 	public void print()
 	{
 		System.out.print(scasol);
 	}
+	
 	//Display the string with a new line
 	public void println()
 	{
 		print();
 		System.out.println();
 	}
+	
 	public void SmallChange()
 	{
-		int n=scasol.length();
-		Random rand = new Random();
-		rand.setSeed(System.currentTimeMillis());
-		int p = Math.abs(rand.nextInt(n));
+		int n=scasol.length()-1;
+		int p=CS2004.UI(0,n);
 		String x="";
 		for(int i=0;i<p;i++)
 		{
 			x+=scasol.charAt(i);
 		}
-		for(int j=p+1;j<n;j++)
+		if(scasol.charAt(p)=='0')
+		{
+			x+="1";
+		}
+		else
+		{
+			x+="0";
+		}
+		for(int j=p+1;j<=n;j++)
 		{
 			x+=scasol.charAt(j);
 		}
