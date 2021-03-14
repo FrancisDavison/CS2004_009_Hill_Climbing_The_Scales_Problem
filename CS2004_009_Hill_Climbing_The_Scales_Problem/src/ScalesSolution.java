@@ -101,4 +101,9 @@ public class ScalesSolution
 		}
 		scasol=x;
 	}
+	
+	public String GetSol()
+	{
+		return(scasol);
+	}
 }
