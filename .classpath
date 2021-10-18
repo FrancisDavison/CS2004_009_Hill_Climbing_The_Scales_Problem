@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CS2004_009_Hill_Climbing_The_Scales_Problem/src"/>
+	<classpathentry kind="output" path="CS2004_009_Hill_Climbing_The_Scales_Problem/bin"/>
+</classpath>
